@@ -14,6 +14,7 @@ class Program
                
         static void DisplayWelcome ()
             {
+                Console.WriteLine("");
                 Console.WriteLine("Welcome to the Program!");
             }
 
@@ -41,6 +42,7 @@ class Program
         static void DisplayResult(string UserName, int SquareRoot)
             {
                 Console.WriteLine($"{UserName}, the square of your number is {SquareRoot}");
+                Console.WriteLine("");
             }      
              
     }
