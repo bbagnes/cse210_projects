@@ -1,7 +1,7 @@
 /*To "show creativity I added a method in the Journal class to select and display journal entries by date, and 
 a constructor in the Entry class to add an Entry with specified member variables in order to create a dummy
 entry dated 09/16/2024 in the Journal class to test its functionality. I also added a menu option in the main 
-program to display select and display journal entries selected by date.*/
+program to select and display journal entries selected by date.*/
 
 using System;
 using System.IO;
