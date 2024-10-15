@@ -20,10 +20,9 @@ public class Video
         _comments = new List<Comment>();
     }
 
-    public void AddComment(Video video, string author, string text)
+    public void AddComment(Comment comment)
     {
-        Comment comment = new Comment(author, text);
-        video._comments.Add(comment);
+        _comments.Add(comment);
     }
 
     public int NumberOfComments()
@@ -43,7 +42,7 @@ public class Video
     public void DisplayVideoDetails(Video video)
     {
         int comments = video.NumberOfComments();
-        Console.WriteLine($"{_author}: '{_title}.' Length: {_length} Comments: {comments}");
+        Console.WriteLine($"{_author}: '{_title}', Length: {_length} seconds, Comments: {comments}");
     }
 }
          
