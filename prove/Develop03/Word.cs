@@ -1,6 +1,7 @@
 /* For the "Show Creativity and Exceeding Requirements" portion of the assignment I added an option in the main program to reset the text 
 to show all text, and added a method in the Scripture class that resets all boolean logic to "false;" which in turn causes the GetDisplayText 
 method in the Word Class to display all of the words in the scripture. */
+
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -20,7 +21,7 @@ public class Word
         _word = text;
         _hiddenWord = CreateHiddenWord(_word);
         
-        _isHidden = true;
+        _isHidden = false;
     }
     
     public string CreateHiddenWord(string word)
@@ -61,16 +62,14 @@ public class Word
 
     public void GetDisplayText()
     {
-        // string wordSelection = "";
         if (_isHidden == true)
         {
             Console.Write($"{_hiddenWord} ");
-            // wordSelection = _hiddenWord;
         }
+
         else if (_isHidden == false)
         {
             Console.Write($"{_word} ");
-            // wordSelection = _word;
         }
     }
 }

@@ -1,7 +1,9 @@
 /* For the "Show Creativity and Exceeding Requirements" portion of the assignment I added an option in the main program to reset the text 
 to show all text, and added a method in the Scripture class that resets all boolean logic to "false;" which in turn causes the GetDisplayText 
 method in the Word Class to display all of the words in the scripture. */
+
 using System;
+using System.Data.Common;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -10,7 +12,7 @@ public class Scripture
 {
     private Reference _reference;
 
-    private List<Word> _words;
+    private static List<Word> _words;
 
     public Scripture(Reference reference, string text)
     {
@@ -29,33 +31,42 @@ public class Scripture
     public void HideRandomWords(int number)
     {
         int countDown = number;
+        int countChange = 0;        
+
         while (countDown> 0)
         {      
-            foreach (Word word in _words)
+            if ((_words.Count - countChange) < countDown)
             {
-                bool status = word.GetHiddenStatus();
+               countDown = _words.Count - countChange;
+            }
 
-                if (status == false)
+            else
+            {
+                countChange = 0;
+                foreach (Word word in _words)
                 {
-                    Random randomGenerator = new Random();
-                    int hideWord = randomGenerator.Next(1, 7);
-                    if (hideWord == 7)
+                    bool status = word.GetHiddenStatus();                
+                
+                    if (status == false)
                     {
-                        word.HideWord();
-                        countDown = countDown - 1;
-                        Console.WriteLine(countDown);                        
+                        Random randomGenerator = new Random();
+                        int hideWord = randomGenerator.Next(1, 7);
+                        if (hideWord == 5)
+                        {
+                            word.HideWord();
+                            countDown = countDown - 1;                                                   
+                        }
+                        else
+                        {
+                            continue;
+                        }          
                     }
 
                     else
                     {
+                        countChange ++;
                         continue;
                     }
-                }
-                
-
-                else
-                {
-                    continue;
                 }
             }
         }
@@ -78,21 +89,21 @@ public class Scripture
         }
     }
 
-    // public bool IsCompletelyHidden()
-    // {
-    //    foreach (Word word in _words)
-    //    {
-    //         bool status = word.GetHiddenStatus();
-    //         if (status == false)
-    //         {
-    //             break;
-    //         }
+    public bool IsCompletelyHidden()
+    {
+       foreach (Word word in _words)
+       {
+            bool status = word.GetHiddenStatus();
+            if (status == false)
+            {
+                return false;
+            }
 
-    //         else
-    //         {
-    //             continue;
-    //         }
-    //    }
-    //    return true;
-    // }
+            else
+            {
+                continue;
+            }
+       }
+       return true;
+    }
 }
