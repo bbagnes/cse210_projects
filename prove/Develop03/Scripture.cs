@@ -1,6 +1,6 @@
 /* For the "Show Creativity and Exceeding Requirements" portion of the assignment I added an option in the main program to reset the text 
 to show all text, and added a method in the Scripture class that resets all boolean logic to "false;" which in turn causes the GetDisplayText 
-method in the Word Class to display all of the words in the scripture. */
+method in the Word Class to display all of the words in the scripture. */ 
 
 using System;
 using System.Data.Common;
