@@ -15,32 +15,33 @@ public class ListingActivity : Activity
     public void Run()
     {
         DisplayStartMessage();
+        Console.WriteLine("");
 
         Console.Write("Get Ready...  ");
-        ShowSpinner(3);
+        ShowSpinner(2);
 
-        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine("");
 
         Console.WriteLine($"* * * {GetRandomPrompt()} * * *");
         Console.WriteLine("");
 
-        Console.WriteLine("When you have something in mind, press enter to continue.");
-        Console.ReadLine();
-        Console.WriteLine();        
-
-        Console.WriteLine("Now ponder of each of the following questions as they relate to this experience.");
-        Console.Write("You may begin in: ");
-        ShowCountDown(5);
+        Console.Write("You May begin in:  ");
+        ShowCountDown(6);
+        Console.WriteLine("");
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         while (DateTime.Now <= endTime)
         {
-
-            
-
-        } 
+            Console.Write("> ");
+            Console.ReadLine();
+            _count ++;
+        }
+        
+        Console.WriteLine("");
+        Console.WriteLine($"You have listed {_count} items!");
+        Console.WriteLine("");
 
         DisplayEndMessage();
     } 

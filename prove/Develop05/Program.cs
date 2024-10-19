@@ -1,6 +1,7 @@
-/*For this week's Show Creativity and Exceeding Requirements I added a method to remove each question from the list of questions used in the
-Reflection Activity after it had been used once to prevent repetition. This method only works, because the _questions list is intialized each 
-time the option for the Reflection Activity is selected from the main menu.*/
+/*For this week's Show Creativity and Exceeding Requirements I added a method to remove each question 
+from the list of questions used in the Reflection Activity after it had been used once to prevent repetition.
+ This method does not prevent any questions from being reused if the Reflection Activity is run again.*/
+
 using System;
 
 class Program
@@ -16,7 +17,7 @@ class Program
             if (response == 1)
             {
                 string name = "Breathing Activity";
-                string description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+                string description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
                 int duration = 60;
 
                 BreathingActivity breathingActivity = new BreathingActivity(name, description, duration);

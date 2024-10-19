@@ -1,3 +1,7 @@
+/*For this week's Show Creativity and Exceeding Requirements I added a method to remove each question 
+from the list of questions used in the Reflection Activity after it had been used once to prevent repetition.
+ This method does not prevent any questions from being reused if the Reflection Activity is run again.*/
+
 using System;
 
 
