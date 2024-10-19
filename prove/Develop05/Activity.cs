@@ -86,9 +86,8 @@ public class Activity
     }
 
     public void ShowTwinklingStars()
-        {
-    
-            int countDown = 30;
+        {    
+            int countDown = 2;
             while (countDown > 0)
             {
                 Console.Write("\b\b\b\b\b     \b\b\b\b\b");
