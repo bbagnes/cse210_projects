@@ -34,8 +34,8 @@ class Program
             }
         static int SquareNumber(int Number)
             {
-                int SquareRoot = Number * Number;
-                return SquareRoot;
+                int Squared = Number * Number;
+                return Squared;
 
             }
 
