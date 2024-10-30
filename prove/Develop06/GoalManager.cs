@@ -22,16 +22,16 @@ public class GoalManager
 
     public void Start()
     {
-        
-        Console.WriteLine("");
-        DisplayPlayerInfo();
-        Console.WriteLine("");
-        Console.WriteLine("Menu Options: ");
-        Console.WriteLine("1. Creat New Goal \n2. List Goals \n3. Save Goals \n4. Load Goals \n5. Record Event \n6. Quit");
-        Console.Write("Select a choice from the menu: ");
-        menuChoice = Console.ReadLine();
         do
         {
+            Console.WriteLine("");
+            DisplayPlayerInfo();
+            Console.WriteLine("");
+            Console.WriteLine("Menu Options: ");
+            Console.WriteLine("1. Creat New Goal \n2. List Goals \n3. Save Goals \n4. Load Goals \n5. Record Event \n6. Quit");
+            Console.Write("Select a choice from the menu: ");
+            menuChoice = Console.ReadLine();
+
             if(menuChoice == "1")
             {
                 CreateGoal();
