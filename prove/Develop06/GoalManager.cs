@@ -192,7 +192,7 @@ public class GoalManager
 
         else if(_score >= 500)
         {
-            Console.WriteLine("Congratulations, you have obtained the rank of: Apprentence Keeper of Goals!");
+            Console.WriteLine("Congratulations, you have obtained the rank of: Apprentice Keeper of Goals!");
         }
     }
 
